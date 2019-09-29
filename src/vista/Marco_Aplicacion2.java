@@ -2,6 +2,8 @@ package vista;
 
 import java.awt.*;
 
+import controlador.*;
+
 import javax.swing.*;
 
 public class Marco_Aplicacion2 extends JFrame {
@@ -18,11 +20,11 @@ public class Marco_Aplicacion2 extends JFrame {
 
 		menus.setLayout(new FlowLayout());
 
-		nombres = new JComboBox();
+		secciones = new JComboBox();
 
-		nombres.setEditable(false);
+		secciones.setEditable(false);
 
-		nombres.addItem("Todos");
+		secciones.addItem("Todos");
 
 		asignaturas = new JComboBox();
 
@@ -36,7 +38,7 @@ public class Marco_Aplicacion2 extends JFrame {
 
 		add(resultado);
 
-		menus.add(nombres);
+		menus.add(secciones);
 
 		menus.add(asignaturas);
 
@@ -48,9 +50,12 @@ public class Marco_Aplicacion2 extends JFrame {
 		
 		add(botonConsulta, BorderLayout.SOUTH);
 
+		addWindowListener(new ControladorCargaSecciones(this));
+		
+		
 	}
 
-	private JComboBox nombres;
+	public JComboBox secciones;
 
 	private JComboBox asignaturas;
 

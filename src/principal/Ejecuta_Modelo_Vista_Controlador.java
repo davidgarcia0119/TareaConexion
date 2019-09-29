@@ -14,7 +14,6 @@ public class Ejecuta_Modelo_Vista_Controlador {
 		miMarco.setVisible(true);
 		
 		
-		
 
 	}
 

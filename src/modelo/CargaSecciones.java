@@ -25,16 +25,34 @@ public class CargaSecciones {
 			rs=secciones.executeQuery("SELECT DISTINCTROW SECCIÓN FROM PRODUCTOS");
 			
 			
+			while(rs.next()) {
+				
+				rs.previous();
+				miProducto=new Productos();
+				miProducto.setSeccion(rs.getString(1));
+				
+				return miProducto.getSeccion();
+					
+			}
+			
+			
+			rs.close();
+			 
+			 
+			
+			
 			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-	
+		
+		
+		return miProducto.getSeccion();
 
 	}
 
 	Conexion miConexion;
 	
-	private ResultSet rs; 
+	public ResultSet rs; 
 
 }
